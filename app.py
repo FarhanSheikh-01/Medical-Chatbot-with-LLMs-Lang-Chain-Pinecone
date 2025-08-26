@@ -15,15 +15,15 @@ app = Flask(__name__)
 load_dotenv()
 
 PINECONE_API_KEY = os.environ.get('PINECONE_API_KEY')
-GROK_API_KEY = os.environ.get('GROK_API_KEY')
+GROQ_API_KEY = os.environ.get('GROQ_API_KEY')
 
 if PINECONE_API_KEY is None:
     raise ValueError("PINECONE_API_KEY environment variable is not set.")
-if GROK_API_KEY is None:
-    raise ValueError("GROK_API_KEY environment variable is not set.")
+if GROQ_API_KEY is None:
+    raise ValueError("GROQ_API_KEY environment variable is not set.")
 
 os.environ["PINECONE_API_KEY"] = PINECONE_API_KEY
-os.environ["GROK_API_KEY"] = GROK_API_KEY
+os.environ["GROQ_API_KEY"] = GROQ_API_KEY
 
 
 embeddings = download_embeddings()
